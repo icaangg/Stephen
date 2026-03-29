@@ -123,7 +123,7 @@
 
 <div class="card">
   <div class="envelope">💌</div>
-  <h1>Hi <em>baby</em>,<br>please click the button.</h1>
+  <h1>Hi <em>my love</em>,<br>please click the button.</h1>
   <p class="sub">Something special is waiting for you, or not lol face ass ✨</p>
   <a class="btn" href="dashboard.php">Open it</a>
 </div>

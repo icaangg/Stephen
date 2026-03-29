@@ -99,7 +99,34 @@
     .card-body { color: var(--muted); font-size: .88rem; line-height: 1.65; }
 
     /* ── love meter ── */
-    .love-meter { grid-column: 1 / -1; }
+    .love-meter { grid-column: 1 / -1; position: relative; padding-top: 2.5rem; }
+    .love-meter-notes-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 2;
+      display: inline-block;
+      background: linear-gradient(135deg, var(--rose), #fb7185);
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: .45rem .75rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 14px rgba(244,63,94,.25);
+      transition: transform .15s, box-shadow .15s;
+      white-space: nowrap;
+      max-width: calc(100% - 2rem);
+      text-align: center;
+      line-height: 1.25;
+    }
+    .love-meter-notes-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(244,63,94,.35);
+    }
     .meter-label {
       display: flex;
       justify-content: space-between;
@@ -304,6 +331,19 @@
       .stat-lbl {
         font-size: .66rem;
       }
+
+      .love-meter {
+        padding-top: 2.85rem;
+      }
+
+      .love-meter-notes-btn {
+        top: .85rem;
+        right: .85rem;
+        font-size: .62rem;
+        padding: .38rem .55rem;
+        white-space: normal;
+        max-width: 11rem;
+      }
     }
   </style>
 </head>
@@ -323,6 +363,7 @@
 
     <!-- Love Meter -->
     <div class="card love-meter">
+      <a class="love-meter-notes-btn" href="messages.php">Notes - Click to open</a>
       <div class="card-icon">💗</div>
       <div class="card-title" style="font-size:1.1rem; margin-bottom:.9rem;">How much I love you</div>
       <div class="meter-label">
@@ -332,7 +373,7 @@
       <div class="bar-track">
         <div class="bar-fill" id="barFill"></div>
       </div>
-      <p class="card-body" style="margin-top:.9rem;">The bar doesn't go higher than 100%, I hope it dooes lol but honestly, my love for you does. 💕</p>
+      <p class="card-body" style="margin-top:.9rem;">the bar doesn't go higher than 100%, I hope it dooes lol but honestly, my love for you does 🩷</p>
     </div>
 
     <!-- Reasons I Love You -->
@@ -361,7 +402,7 @@
     <div class="card">
       <div class="card-icon">🌤</div>
       <div class="card-title">How are you feeling?</div>
-      <p class="card-body" style="margin-bottom:.8rem;">Tell me your vibe today, I wanna know or just click everything to see a message lol💬</p>
+      <p class="card-body" style="margin-bottom:.8rem;">Tell me your vibe today, I wanna know or just click everything to see a message lol 💬</p>
       <div class="mood-grid" id="moodGrid">
         <button class="mood-btn">😊 Happy</button>
         <button class="mood-btn">🥰 Loved</button>
@@ -464,10 +505,10 @@
   /* ── mood messages ── */
   const moodMsgs = {
     '😊 Happy':   "Seeing you happy makes my whole day 💛",
-    '🥰 Loved':   "Good boy. Because you are SO loved 🫶",
-    '😴 Tired':   "Rest, baby. You deserve it. I got you 🌙",
+    '🥰 Loved':   "Good boy. Because you are SOOO loved 🫶",
+    '😴 Tired':   "Rest, baby. You deserve it 🌙",
     '🤩 Excited': "And what are you excited about? Hmm",
-    '🥺 Soft':    "Come here. I just want to hold you 🤍",
+    '🥺 Soft':    "Come here. I got you, always 🤍",
     '😌 Chill':   "Perfect. Let's just exist together 🍃",
   };
   document.getElementById('moodGrid').addEventListener('click', e => {
@@ -479,10 +520,10 @@
 
   /* ── days together ── */
   // Set this to the exact number you want to show:
-  const daysTogether = 34;
+  const daysTogether = 35;
   document.getElementById('cdYears').textContent = '0';
   document.getElementById('cdMonths').textContent = '1';
-  document.getElementById('cdDays').textContent = '4';
+  document.getElementById('cdDays').textContent = '5';
   document.getElementById('cdTotal').textContent = daysTogether.toLocaleString();
 
 </script>
