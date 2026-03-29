@@ -2,11 +2,9 @@
 // Customize your message here (edit the text between the quotes):
 $secret_message = "hi baby, being with you for a month has made me realize so many things, that i can be loved deeply, and still be seen, heard, and valued all at once.
 
-some might say that it's too early for all this, but when i know, i know. 
-with you, i can be soft. i can be myself, even the messy, silly parts of me, and you still choose me, just as i am.
+some might say that it's too early for all this, but when i know, i know. with you, i can be soft. i can be myself, even the messy, silly parts of me, and you still choose me, just as i am.
 
-you make the smallest things feel big, like they matter, like i matter. you remember (but you forget sometimes lol) the little details, the things i 
-say, what i like, what i don't, and somehow, that means everything.
+you make the smallest things feel big, like they matter, like i matter. you remember (but you forget sometimes lol) the little details, the things i say, what i like, what i don't, and somehow, that means everything.
 
 the way you love me is gentle, it makes me feel whole in ways i didn't expect. and now, even on ordinary days, i feel something warm just knowing you exist in my life.";
 ?>
