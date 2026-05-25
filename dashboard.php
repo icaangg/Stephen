@@ -198,8 +198,46 @@
     .days-together {
       grid-column: span 2;
     }
+    .photo-card {
+      padding: .85rem;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      min-height: 0;
+    }
+    .photo-card img {
+      flex: 1;
+      width: 100%;
+      min-height: 160px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 14px;
+      border: 1.5px solid #f9d4dc;
+      display: block;
+    }
+    .photo-card-caption {
+      margin-top: .65rem;
+      font-size: .8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    @media (min-width: 701px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .days-together {
+        grid-column: 1 / 3;
+      }
+      .photo-card {
+        grid-column: 3;
+        align-self: stretch;
+      }
+    }
     @media (max-width: 700px) {
       .days-together {
+        grid-column: auto;
+      }
+      .photo-card {
         grid-column: auto;
       }
     }
@@ -295,6 +333,10 @@
 
       .days-together {
         grid-column: auto;
+      }
+
+      .photo-card img {
+        max-height: 260px;
       }
 
       .meter-label span:last-child {
@@ -426,6 +468,11 @@
       </div>
     </div>
 
+    <div class="card photo-card">
+      <img src="images/family.png" alt="Us together" width="400" height="400" loading="lazy"/>
+      <p class="photo-card-caption">🩷</p>
+    </div>
+
 
     <!-- Stats Strip -->
     <div class="stats-strip">
@@ -520,10 +567,10 @@
 
   /* ── days together ── */
   // Set this to the exact number you want to show:
-  const daysTogether = 35;
+  const daysTogether = 94;
   document.getElementById('cdYears').textContent = '0';
-  document.getElementById('cdMonths').textContent = '1';
-  document.getElementById('cdDays').textContent = '5';
+  document.getElementById('cdMonths').textContent = '3';
+  document.getElementById('cdDays').textContent = '3';
   document.getElementById('cdTotal').textContent = daysTogether.toLocaleString();
 
 </script>

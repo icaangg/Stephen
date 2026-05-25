@@ -1,12 +1,35 @@
 <?php
-// Customize your message here (edit the text between the quotes):
-$secret_message = "hi baby, being with you for a month has made me realize so many things, that i can be loved deeply, and still be seen, heard, and valued all at once.
+// Customize messages here — add more entries to the array as needed.
+$messages = [
+  [
+    'title' => 'message one',
+    'body'  => "hi baby, being with you for a month has made me realize so many things, that i can be loved deeply, and still be seen, heard, and valued all at once.
 
 some might say that it's too early for all this, but when i know, i know. with you, i can be soft. i can be myself, even the messy, silly parts of me, and you still choose me, just as i am.
 
 you make the smallest things feel big, like they matter, like i matter. you remember (but you forget sometimes lol) the little details, the things i say, what i like, what i don't, and somehow, that means everything.
 
-the way you love me is gentle, it makes me feel whole in ways i didn't expect. and now, even on ordinary days, i feel something warm just knowing you exist in my life.";
+the way you love me is gentle, it makes me feel whole in ways i didn't expect. and now, even on ordinary days, i feel something warm just knowing you exist in my life.",
+  ],
+  [
+    'title' => 'message two',
+    'body'  => "hey, baby! it's been 3 months!! can you believe it? it honestly feels like it's been so much longer lol.
+
+over the past three months, i've noticed that we've had our fair share of fights which is completely normal. despite that, you've remained consistent with all the little things you've been doing since day one. well maybe some things have changed, sure, but that's okay. so far, i think we're still doing great.
+
+there was that one thing that happened that still sticks with me, and i honestly don't think i'll ever forget it. but i've been learning to control myself and avoid saying things that i know would only lead to arguments. looking back, i think i've outgrown some of those toxic habits. these days, i just want peace. i want to focus on our relationship, our growth, our connection, and the future we've been talking about.
+
+you're slowly earning my trust again, and i'm allowing myself to trust you naturally instead of forcing it. i think that's a good sign.
+
+overall, i really think we're doing well. we haven't broken up or chosen to let each other go over arguments, and i think that's something worth appreciating. of course, we still have a lot of things to work on, but i believe we'll continue to grow together through all of it.
+
+i'm also working on myself, not just for me, but for us. being with you makes me wanna become a better person and a better partner. i wanna keep learning how to love you the way you deserve to be loved, and i'll continue putting effort into this relationship that i always pray will last forever.
+
+honestly, life hasn't been the same since i met you. it became more beautiful in ways i can't explain. thank you for all the memories, the lessons, the patience, and the love you've given me these past three months.
+
+i love you always and i'm looking forward to all the moments, milestones, adventures, and memories we'll get to share together in the future.",
+  ],
+];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,6 +86,13 @@ the way you love me is gentle, it makes me feel whole in ways i didn't expect. a
       width: 100%;
       margin-bottom: 2rem;
       letter-spacing: .02em;
+    }
+
+    .msg-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
     .msg-card {
@@ -129,26 +159,31 @@ the way you love me is gentle, it makes me feel whole in ways i didn't expect. a
   <a class="back" href="dashboard.php">← Back</a>
   <h1>daily messages for you</h1>
 
-  <div class="msg-card" id="msgCard" role="button" tabindex="0" aria-expanded="false" aria-label="Tap to read message">
-    <div class="msg-card-teaser">message one</div>
-    <p class="msg-card-hint">Click to open</p>
-    <div class="msg-card-body"><?php echo htmlspecialchars($secret_message, ENT_QUOTES, 'UTF-8'); ?></div>
+  <div class="msg-list">
+    <?php foreach ($messages as $msg): ?>
+    <div class="msg-card" role="button" tabindex="0" aria-expanded="false" aria-label="Tap to read <?php echo htmlspecialchars($msg['title'], ENT_QUOTES, 'UTF-8'); ?>">
+      <div class="msg-card-teaser"><?php echo htmlspecialchars($msg['title'], ENT_QUOTES, 'UTF-8'); ?></div>
+      <p class="msg-card-hint">Click to open</p>
+      <div class="msg-card-body"><?php echo htmlspecialchars($msg['body'], ENT_QUOTES, 'UTF-8'); ?></div>
+    </div>
+    <?php endforeach; ?>
   </div>
 </div>
 
 <script>
   (function () {
-    var card = document.getElementById('msgCard');
-    function toggle() {
-      var open = card.classList.toggle('is-open');
-      card.setAttribute('aria-expanded', open ? 'true' : 'false');
-    }
-    card.addEventListener('click', toggle);
-    card.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggle();
+    document.querySelectorAll('.msg-card').forEach(function (card) {
+      function toggle() {
+        var open = card.classList.toggle('is-open');
+        card.setAttribute('aria-expanded', open ? 'true' : 'false');
       }
+      card.addEventListener('click', toggle);
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle();
+        }
+      });
     });
   })();
 </script>
