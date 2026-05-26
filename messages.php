@@ -1,5 +1,5 @@
 <?php
-// Customize messages here — add more entries to the array as needed.
+
 $messages = [
   [
     'title' => 'message one',

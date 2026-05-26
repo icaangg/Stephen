@@ -499,7 +499,7 @@
 
 <script>
   /* ── floating hearts ── */
-  const emojis = ['🩷','💕','💗','💓','💝','🌸','✨','🫶'];
+  const emojis = ['🩷','💕','💗','💝','🌸','✨','🫶', '🖕🏽'];
   const hc = document.getElementById('heartsContainer');
   function spawnHeart() {
     const el = document.createElement('span');
