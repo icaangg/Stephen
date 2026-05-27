@@ -89,6 +89,7 @@
     .card:nth-child(4) { animation-delay: .26s; }
     .card:nth-child(5) { animation-delay: .33s; }
     .card:nth-child(6) { animation-delay: .40s; }
+    .card:nth-child(7) { animation-delay: .47s; }
 
     .card-icon { font-size: 2.2rem; margin-bottom: .8rem; }
     .card-title {
@@ -278,7 +279,47 @@
       display: block;
     }
 
-    /* ── stats strip ── */
+    /* ── games card ── */
+    .games-grid {
+      display: flex;
+      gap: .7rem;
+      flex-wrap: wrap;
+      margin-top: .7rem;
+    }
+    .game-btn {
+      flex: 1;
+      min-width: 120px;
+      background: linear-gradient(135deg, var(--petal), #fff0f3);
+      border: 1.5px solid #fce7f3;
+      border-radius: 14px;
+      padding: .9rem .7rem;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform .18s, box-shadow .18s, background .18s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .35rem;
+      color: var(--brown);
+    }
+    .game-btn:hover {
+      background: linear-gradient(135deg, var(--rose), #fb7185);
+      color: #fff;
+      border-color: var(--rose);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(244,63,94,.25);
+    }
+    .game-btn-icon { font-size: 1.9rem; }
+    .game-btn-name {
+      font-family: 'Playfair Display', serif;
+      font-size: .88rem;
+      font-weight: 700;
+    }
+    .game-btn-desc {
+      font-size: .72rem;
+      opacity: .75;
+    }
     .stats-strip {
       display: flex; gap: 1rem; flex-wrap: wrap;
       background: linear-gradient(135deg, var(--rose), #fb7185);
@@ -474,6 +515,25 @@
     </div>
 
 
+    <!-- Games -->
+    <div class="card" style="grid-column: 1 / -1;">
+      <div class="card-icon">🎮</div>
+      <div class="card-title">Mini Games</div>
+      <p class="card-body" style="margin-bottom:.9rem;">Take a little break and play something cute together — or compete! 🩷</p>
+      <div class="games-grid">
+        <a class="game-btn" href="quiz.php">
+          <span class="game-btn-icon">🧠</span>
+          <span class="game-btn-name">Love Quiz</span>
+          <span class="game-btn-desc">How well do you know us?</span>
+        </a>
+        <a class="game-btn" href="shooter.php">
+          <span class="game-btn-icon">💘</span>
+          <span class="game-btn-name">Heart Shooter</span>
+          <span class="game-btn-desc">Shoot the hearts, dodge the bad vibes</span>
+        </a>
+      </div>
+    </div>
+
     <!-- Stats Strip -->
     <div class="stats-strip">
       <div class="stat">
@@ -499,7 +559,7 @@
 
 <script>
   /* ── floating hearts ── */
-  const emojis = ['🩷','💕','💗','💝','🌸','✨','🫶', '🖕🏽'];
+  const emojis = ['🩷','💕','💗','💓','💝','🌸','✨','🫶'];
   const hc = document.getElementById('heartsContainer');
   function spawnHeart() {
     const el = document.createElement('span');
